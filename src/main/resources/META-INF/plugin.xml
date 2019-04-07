@@ -18,9 +18,10 @@
     </extensions>
 
     <actions>
-        <group id="PoetryPlugin.SampleMenu" text="Greeting" description="Greeting menu">
-            <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="PoetryPlugin.Greetings" class="HelloAction" text="Hello" description="Says hello"/>
+        <group id="poetry_plugin.ui.actions.PoetryActionGroup"
+               class="poetry_plugin.ui.actions.PoetryActionGroup" text="Poetry"
+               description="Run Python Poetry Actions from IntelliJ" popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
         </group>
     </actions>
 </idea-plugin>
