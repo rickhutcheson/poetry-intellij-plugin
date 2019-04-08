@@ -14,12 +14,15 @@
     -->
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
+        <moduleService serviceInterface="com.oddlyaccurate.poetryplugin.services.PoetryConfigService"
+                       serviceImplementation="com.oddlyaccurate.poetryplugin.services.SimplePoetryConfigService"/>
+        <moduleConfigurable groupId="tools" displayName="Poetry" id="com.oddlyaccurate.poetryplugin.ui.config.PoetryConfigurable"
+                            instance="com.oddlyaccurate.poetryplugin.ui.config.PoetryConfigurable"/>
     </extensions>
 
     <actions>
         <group id="poetry_plugin.ui.actions.PoetryActionGroup"
-               class="poetry_plugin.ui.actions.PoetryActionGroup" text="Poetry"
+               class="com.oddlyaccurate.poetryplugin.ui.actions.PoetryActionGroup" text="Poetry"
                description="Run Python Poetry Actions from IntelliJ" popup="true">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
         </group>
