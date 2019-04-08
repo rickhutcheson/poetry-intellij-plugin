@@ -27,9 +27,11 @@ public interface PoetryConfigService extends PersistentStateComponent<PoetryConf
 
         @Override
         public PoetryConfigService.State clone() {
-            PoetryConfigService.State cloned = new PoetryConfigService.State();
-            cloned.poetryPath = this.poetryPath;
-            return cloned;
+            try {
+                return (PoetryConfigService.State) super.clone();
+            } catch (CloneNotSupportedException e) {
+                throw new AssertionError();  // absolutely can't happen
+            }
         }
 
         @Override
