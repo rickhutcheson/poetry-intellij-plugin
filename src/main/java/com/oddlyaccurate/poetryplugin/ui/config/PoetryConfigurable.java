@@ -1,7 +1,7 @@
 package com.oddlyaccurate.poetryplugin.ui.config;
 
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.options.Configurable;
+import com.intellij.openapi.project.Project;
 import com.oddlyaccurate.poetryplugin.services.PoetryConfigService;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
@@ -15,7 +15,7 @@ import javax.swing.*;
  * Allows rendering the form, and integrates with OK/Apply/Cancel buttons
  * using fields below.
  */
-public class PoetryConfigurable implements Configurable {
+public final class PoetryConfigurable implements Configurable {
 
     /** The form specific to this module */
     private PoetryConfigForm configForm;
@@ -23,8 +23,8 @@ public class PoetryConfigurable implements Configurable {
     /** Our config service used for this module */
     private PoetryConfigService configService;
 
-    public PoetryConfigurable(@NotNull Module module) {
-        configService = PoetryConfigService.getInstance(module);
+    public PoetryConfigurable(@NotNull Project project) {
+        configService = PoetryConfigService.getInstance(project);
         configForm = new PoetryConfigForm(configService.getState());
     }
 
