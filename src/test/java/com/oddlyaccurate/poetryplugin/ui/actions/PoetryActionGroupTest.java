@@ -4,13 +4,8 @@ import junit.framework.TestCase;
 
 public class PoetryActionGroupTest extends TestCase {
 
-    void testPoetryActionGroupContents () {
+    public void testPoetryActionGroupContents () {
         PoetryActionGroup pag = new PoetryActionGroup();
         assertEquals(pag.getChildren(null).length, 5);
-    }
-
-    void testTravisFailsThisTest () {
-        PoetryActionGroup pag = new PoetryActionGroup();
-        assertEquals(pag.getChildren(null).length, 0);
     }
 }
