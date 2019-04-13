@@ -14,10 +14,10 @@
     -->
 
     <extensions defaultExtensionNs="com.intellij">
-        <moduleService serviceInterface="com.oddlyaccurate.poetryplugin.services.PoetryConfigService"
-                       serviceImplementation="com.oddlyaccurate.poetryplugin.services.SimplePoetryConfigService"/>
-        <moduleConfigurable groupId="tools" displayName="Poetry" id="com.oddlyaccurate.poetryplugin.ui.config.PoetryConfigurable"
-                            instance="com.oddlyaccurate.poetryplugin.ui.config.PoetryConfigurable"/>
+        <projectService serviceInterface="com.oddlyaccurate.poetryplugin.services.PoetryConfigService"
+                        serviceImplementation="com.oddlyaccurate.poetryplugin.services.SimplePoetryConfigService"/>
+        <projectConfigurable groupId="tools" displayName="Poetry" id="com.oddlyaccurate.poetryplugin.ui.config.PoetryConfigurable"
+                             instance="com.oddlyaccurate.poetryplugin.ui.config.PoetryConfigurable"/>
     </extensions>
 
     <actions>

@@ -1,12 +1,12 @@
 package com.oddlyaccurate.poetryplugin.services;
 
 import com.intellij.openapi.components.PersistentStateComponent;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleServiceManager;
+import com.intellij.openapi.components.ServiceManager;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Represents the current per-module configuration that the user has chosen for Poetry.
+ * Represents the current per-project configuration that the user has chosen for Poetry.
  * It provides access to this state through the `getState()` and `loadState()` methods.
  *
  * The state will be stored at some persistent location specified by the implementation.
@@ -14,12 +14,12 @@ import org.jetbrains.annotations.NotNull;
  * @see SimplePoetryConfigService
  */
 public interface PoetryConfigService extends PersistentStateComponent<PoetryConfigService.State> {
-    static PoetryConfigService getInstance(@NotNull Module module) {
-        return ModuleServiceManager.getService(module, PoetryConfigService.class);
+    static PoetryConfigService getInstance(@NotNull Project project) {
+        return ServiceManager.getService(project, PoetryConfigService.class);
     }
 
     /**
-     * Represents a actual module configuration of the poetry plugin.
+     * Represents a actual project configuration of the poetry plugin.
      */
     final class State implements Cloneable {
         /** The path to the desired poetry binary */
